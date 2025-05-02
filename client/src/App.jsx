@@ -4,14 +4,12 @@ import { TareaFormPage } from './Pages/TareaFormPage';
 
 function App(){
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/Tareas" element={<TareasPage/>}/>
         <Route path="/TareasF" element={<TareaFormPage/>}/>
       </Routes>    
     </BrowserRouter>
-
   );
-
 }
 export default App
