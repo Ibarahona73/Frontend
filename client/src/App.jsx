@@ -4,8 +4,8 @@ import { TareaFormPage } from './Pages/TareaFormPage';
 
 function App(){
   return (
-    <BrowserRouter basename="/">
-      <Routes>
+    <BrowserRouter>
+      <Routes>        
         <Route path="/Tareas" element={<TareasPage/>}/>
         <Route path="/TareasF" element={<TareaFormPage/>}/>        
       </Routes>    
