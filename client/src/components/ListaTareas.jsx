@@ -21,7 +21,7 @@ export function ListaTareas(){
         <div>
           {tareas.map(tarea => (
             <div key={tarea.id}>
-              <h1>{tarea.titulo}</h1>
+              <h2>{tarea.titulo}</h2>
               <p>{tarea.descripcion}</p>
             </div>
           ))}
