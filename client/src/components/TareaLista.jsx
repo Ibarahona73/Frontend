@@ -3,11 +3,12 @@ import { TareasAll } from "../api/tareas.api";
 
 export function TareaLista(){
 
-    const [tareas,setTasks] = useState();
+    const [tareas,sTareas] = useState(); {/* sTareas settasks*/}
 
     useEffect(() => {
         async function cargaTareas(){
-            const rest = await TareasAll()
+            const res = await TareasAll()
+            sTareas(res.data)
             console.log("Exito..")
         }
         cargaTareas();
