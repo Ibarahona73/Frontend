@@ -1,8 +1,10 @@
-import React from "react";
+import { ListaTareas } from "../components/ListaTareas"
+
+
 
 export function TareasPage(){
     return(
-        <h2>TareasPage</h2>
+        <ListaTareas/>
     )
 }
 
