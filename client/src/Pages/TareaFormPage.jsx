@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { getTareaById, createTarea, updateTarea, deleteTarea } from "../api/tareas.api";
 import { useEffect } from "react";
+import { toast } from "react-hot-toast";
 
 export function TareaFormPage() {
     const { register, handleSubmit, formState: { errors }, setValue } = useForm();
@@ -16,6 +17,7 @@ export function TareaFormPage() {
                 setValue("descripcion", tarea.descripcion);
             } catch (error) {
                 console.error("Error al cargar la tarea:", error);
+                toast.error("Error al cargar la tarea"); // Muestra un mensaje de error
             }
         }
     };
@@ -24,12 +26,15 @@ export function TareaFormPage() {
         try {
             if (params.id) {
                 await updateTarea(params.id, data); // Actualiza la tarea
+                toast.success("Tarea actualizada con éxito"); // Muestra un mensaje de éxito
             } else {
                 await createTarea(data); // Crea una nueva tarea
+                toast.success("Tarea creada con éxito"); // Muestra un mensaje de éxito
             }
             navigate("/Tareas");
         } catch (error) {
             console.error("Error al guardar la tarea:", error);
+            toast.error("Error al guardar la tarea"); // Muestra un mensaje de error
         }
     };
 
@@ -41,6 +46,7 @@ export function TareaFormPage() {
                 navigate("/Tareas");
             } catch (error) {
                 console.error("Error al eliminar la tarea:", error);
+                toast.error("Error al eliminar la tarea"); // Muestra un mensaje de error
             }
         }
     };
