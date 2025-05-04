@@ -19,7 +19,7 @@ export function TareaFormPage(){
         .then((data)=>console.log(data))
         .catch((error)=>console.log(error)) */
     })
-
+    console.log(data);
     return(
         <div>
             <form action="https://backend-ny2d.onrender.com/api/v1/tareas/" method="POST" className="formulario">
