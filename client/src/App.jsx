@@ -9,8 +9,9 @@ function App(){
       <Navigation/>
       <Routes>        
         <Route path="/" element={<Navigate to="Tareas"/>}/>
-        <Route path="/Tareas" element={<TareasPage/>}/>       /**Despliegue de datos */
-        <Route path="/TareasF" element={<TareaFormPage/>}/>       /**Formulario Crear */
+        <Route path="/Tareas" element={<TareasPage/>}/>       /**Despliegue de datos Formulario Crear */
+        <Route path="/TareasF" element={<TareaFormPage/>}/>
+        <Route path="/Tareas/:id/" element={<TareaFormPage/>}/>       
       </Routes>    
     </BrowserRouter>
   );
